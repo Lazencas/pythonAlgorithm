@@ -10,7 +10,6 @@
 
 def solution(arr, divisor):
     answer = []
-    #입력받은 배열의 각 원소를 divisor로 나누어서 나머지가 0인값들을 반환하게 한다.
     for i in arr:
         if(i%divisor==0):
             answer.append(i)
