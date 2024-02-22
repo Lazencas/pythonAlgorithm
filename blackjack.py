@@ -27,14 +27,14 @@ cardnum, obnum = map(int,input().split(' '))
 card_list = list(map(int,input().split(' ')))
 temp_list = card_list
 answer = 0
-#카운트가 
+
 count = 0
 for first_i in card_list:
 
     for sec_i in card_list:
 
         for thir_i in card_list:
-            if
+         
 
 
 
