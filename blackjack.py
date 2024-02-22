@@ -26,15 +26,23 @@
 cardnum, obnum = map(int,input().split(' '))
 card_list = list(map(int,input().split(' ')))
 temp_list = card_list
+
 answer = 0
+temp_answer = 0
 
-count = 0
-for first_i in card_list:
+for i in range(0, len(temp_list)):
 
-    for sec_i in card_list:
+    for j in range(i+1, len(temp_list)):
 
-        for thir_i in card_list:
-         
+        for k in range(j+1, len(temp_list)):
+
+            temp_answer = temp_list[i]+temp_list[j]+temp_list[k]
+
+            if temp_answer<=obnum and temp_answer>answer:
+                answer = temp_answer
+
+print(answer)
+
 
 
 
