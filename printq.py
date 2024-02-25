@@ -41,4 +41,5 @@ for i in range(testcase):
     #가장큰수와 가장 작은수를 일단 찾을 수 있다. max(print_queue), min(print_queue)
     #answer_file의 어떤 정보를 기억해야할거같은데, answer_file의 값-1 만큼의 위치의 print_queue가 우선순위고
     #이거 answer_file_priority 라고.... 언제까지 정렬을 반복할지랑..... 어떻게 정렬할지...... 이거 두개만 해결하면 된다
-    #정렬확인로직, 정렬로직asdddddd
+    #정렬확인로직, 정렬로직
+    #10분고민....
