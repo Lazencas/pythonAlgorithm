@@ -27,11 +27,14 @@
 # 각 테스트 케이스에 대해 문서가 몇 번째로 인쇄되는지 출력한다.
 
 testcase = int(input())
+answer_file_order = 0
+anlist = []
+repeat = True
 
 #입력된 테스트 케이스 수 만큼 반복
 for i in range(testcase):
-    file_ea, answer_file = map(int,input().split(' '))
-    print_queue = list(map(int,input().split(' ')))
+    file_ea, answer_file_location = map(int,input().split(' '))
+    print_q = list(map(int,input().split(' ')))
     #프린트큐 전체에서 가장 큰 수를 찾는다
     #프린트큐를 전체 순회하면서 가장 큰수보다 작은 수가 있으면 [0]번째 에서 빼서 [-1]번째에 넣어준다
     #이렇게해서 내림차순이 완료 될때까지 반복한다.
@@ -43,3 +46,39 @@ for i in range(testcase):
     #이거 answer_file_priority 라고.... 언제까지 정렬을 반복할지랑..... 어떻게 정렬할지...... 이거 두개만 해결하면 된다
     #정렬확인로직, 정렬로직
     #10분고민....
+    #이걸로 정답파일의 위치를 추적
+    anlist = [0 for i in range(file_ea)]
+    anlist[answer_file_location] = 1
+    maxnum = max(print_q)
+    temp_q = [i for i in print_q]
+
+    #내림차순 정렬 정답 구하는 로직
+    for i in print_q:
+        if i == 9:
+            temp_q[i]=9
+        if i == 8:
+            temp_q[i]=8
+        if i == 7:
+            temp_q[i]=7                    
+        if i == 6:
+            temp_q[i]=6
+        if i == 5:
+            temp_q[i]=5
+        if i == 4:
+            temp_q[i]=4
+        if i == 3:
+            temp_q[i]=3
+        if i == 2:
+            temp_q[i]=2
+        if i == 1:
+            temp_q[i]=1
+
+
+
+
+    #우선순위 따라 정렬하는 로직
+    for idx in range(file_ea-1):
+        if temp_q[idx] < maxnum:
+            anlist.append(anlist.pop(0))
+        
+    while repeat:
