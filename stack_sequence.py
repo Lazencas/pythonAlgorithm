@@ -16,5 +16,38 @@
 # 입력된 수열을 만들기 위해 필요한 연산을 한 줄에 한 개씩 출력한다. 
 # push연산은 +로, pop 연산은 -로 표현하도록 한다. 불가능한 경우 NO를 출력한다.
 
+N = int(input())
 
+numlist = [0 for i in range(N)]
+
+for i in range(1,N+1):
+    numlist[i-1] = i
+
+templist = []
+
+a=0
+#반복문 입력값 만큼 반복
+#값이 입력되면 그 값이 나오기까지의 과정을 출력
+#과정은 해당 숫자까지 1씩 증가했다가(그 수만큼 + 출력) 그 수랑 같아지면 - 출력 
+#여기에서 불가능한것만 체크해주면 된다.
+for i in range(N):
+    M = int(input())
+    for i in range(N*2):
+        if a==M:
+            a-=1
+            templist.pop()
+            print('-',end='\n')
+            break
+        elif a<M:
+            a+=1
+            templist.append(a)
+            print('+',end='\n')
+        else:
+            a-=1
+            if a!=M or a not in templist:
+                print('불가능')
+                break
+            print('-',end='\n')
     
+#문제1. a값이 스택 팝되는거를 계승을 못함
+#뭔가 근본적으로 잘못되엇나본데, 추가로 불가능 판단도 제대로 안됨.
