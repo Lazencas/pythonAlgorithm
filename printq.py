@@ -52,28 +52,6 @@ for i in range(testcase):
     maxnum = max(print_q)
     temp_q = [i for i in print_q]
 
-    #내림차순 정렬 정답 구하는 로직
-    for i in print_q:
-        if i == 9:
-            temp_q[i]=9
-        if i == 8:
-            temp_q[i]=8
-        if i == 7:
-            temp_q[i]=7                    
-        if i == 6:
-            temp_q[i]=6
-        if i == 5:
-            temp_q[i]=5
-        if i == 4:
-            temp_q[i]=4
-        if i == 3:
-            temp_q[i]=3
-        if i == 2:
-            temp_q[i]=2
-        if i == 1:
-            temp_q[i]=1
-
-
 
 
     #우선순위 따라 정렬하는 로직
@@ -82,3 +60,5 @@ for i in range(testcase):
             anlist.append(anlist.pop(0))
         
     while repeat:
+
+#.... 고민해봐도 모르겠는데
