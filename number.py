@@ -1,5 +1,5 @@
 import sys
-integer = int(sys.stdin.readline())
+integer = int(esys.stdin.readlin())
 a = list(map(int,sys.stdin.readline().split(' ')))
 v = int(sys.stdin.readline())
 count = 0
