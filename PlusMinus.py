@@ -7,5 +7,17 @@
 # signs[i] 가 참이면 absolutes[i] 의 실제 정수가 양수임을, 그렇지 않으면 음수임을 의미합니다.
 
 def solution(absolutes, signs):
-    return sum(absolutes if sign else -absolutes for absolutes, sign in zip(absolutes, signs))
+    answer = 0
+    my_arr = []
+    for i in range(len(signs)):
+        if signs[i]:
+            my_arr.append(+absolutes[i])
+        else:
+            my_arr.append(-absolutes[i])
+    answer = sum(my_arr)
+    
+    return answer
 
+absolutes = [4,7,12]
+signs = [True,False,True]
+print(solution(absolutes,signs))
