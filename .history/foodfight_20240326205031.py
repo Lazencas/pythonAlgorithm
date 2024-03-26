@@ -20,24 +20,9 @@
 # 대회를 위한 음식의 배치를 나타내는 문자열을 return 하는 solution 함수를 완성해주세요.
 def solution(food):
     #2보다 작으면 버리고, 2로 나눈 목 오름차순 해서 붙이고 + 0 + 2로 나눈 목 내림차순 해서 붙이고
-    tmp = []
-    for i in range(1,len(food)):
-        if food[i]>=2:
-            tmp.append(food[i]//2)
-
-    ans = []
-    for j in tmp:
-        for _ in range(j):
-            ans.append(j)
-            
-    new_ans = [i for i in ans]
-    new_ans.sort(reverse=True)
-    ans.sort()
-    answer = ans + [0] + new_ans
-
-    return answer
+    answer = list([lambda x:x for i in food])
+    print(answer)
 
 
-food = [1, 7, 1, 2]
-
+food = [1, 3, 4, 6]
 print(solution(food))

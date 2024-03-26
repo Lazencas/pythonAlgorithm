@@ -38,6 +38,6 @@ def solution(food):
     return answer
 
 
-food = [1, 7, 1, 2]
 
+food = [1, 3, 4, 6]
 print(solution(food))

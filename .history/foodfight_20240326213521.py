@@ -33,11 +33,11 @@ def solution(food):
     new_ans = [i for i in ans]
     new_ans.sort(reverse=True)
     ans.sort()
-    answer = ans + [0] + new_ans
+    answer = ans
 
     return answer
 
 
-food = [1, 7, 1, 2]
 
+food = [1, 3, 4, 6]
 print(solution(food))
