@@ -1,0 +1,7 @@
+N = int(input())
+star = '*'
+sapce = ' '
+i = 2*N
+while (2*N)//2 > i:
+        print((star*i)+sapce*((2*N)-(2*i))+(star*i))
+        i-=1

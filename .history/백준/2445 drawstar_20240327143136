@@ -1,0 +1,5 @@
+N = int(input())
+star = '*'
+sapce = ' '
+for i in range(1,(2*N-1)+1):
+        print((star*i)+sapce*((2*N)-(2*i))+(star*i))
