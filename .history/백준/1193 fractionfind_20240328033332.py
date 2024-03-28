@@ -10,15 +10,7 @@
 # X가 주어졌을 때, X번째 분수를 구하는 프로그램을 작성하시오.
 X = int(input())
 line = 0
-end_index = 0
-while X>end_index:
-    line +=1
-    end_index += line 
+while X > line:
+    line+=1
+
 print(line)
-if line %2 ==0:
-    a= line - (end_index-X)
-    b= (end_index - X)+1
-else:
-    a= (end_index - X)+1
-    b= line - (end_index-X)
-print(a,b,sep='/')

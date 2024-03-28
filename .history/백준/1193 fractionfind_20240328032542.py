@@ -9,16 +9,14 @@
 # … 과 같은 지그재그 순서로 차례대로 1번, 2번, 3번, 4번, 5번, … 분수라고 하자.
 # X가 주어졌을 때, X번째 분수를 구하는 프로그램을 작성하시오.
 X = int(input())
-line = 0
-end_index = 0
-while X>end_index:
+line = 1
+while X > line:
+    X -= line
     line +=1
-    end_index += line 
-print(line)
-if line %2 ==0:
-    a= line - (end_index-X)
-    b= (end_index - X)+1
+if line % 2== 0:
+    a =  X
+    b = line - X +1
 else:
-    a= (end_index - X)+1
-    b= line - (end_index-X)
-print(a,b,sep='/')
+    a = line - X +1
+    b = X
+print(a,b,sep='')

@@ -16,9 +16,9 @@ while X>end_index:
     end_index += line 
 print(line)
 if line %2 ==0:
-    a= line - (end_index-X)
+    a= line - (X-end_index)
     b= (end_index - X)+1
 else:
     a= (end_index - X)+1
-    b= line - (end_index-X)
+    b= line - (X-end_index)
 print(a,b,sep='/')
