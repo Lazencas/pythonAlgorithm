@@ -18,8 +18,8 @@ for _ in range(n):
 for j in range(n - 1):
     for k in range(j + 1, n):
         # 제일 먼저 나간 차의 들어간 순번 > 그 다음으로 나간 차의 들어간 순번
-        print('첫번재값',firstCar[out[j]],sep='-')
-        print('두번째값',firstCar[out[k]],sep='-')
+        print(firstCar[out[j]])
+        print(firstCar[out[k]])
         if firstCar[out[j]] > firstCar[out[k]]:
             cnt += 1
             break

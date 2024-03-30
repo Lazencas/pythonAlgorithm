@@ -1,0 +1,1 @@
+print(int('ZZZZZ',36))
