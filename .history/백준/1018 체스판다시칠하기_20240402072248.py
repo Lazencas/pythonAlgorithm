@@ -18,34 +18,9 @@
 import sys
 input = sys.stdin.readline
 
-cnt_list = []
 board = []
 M, N = map(int,input().split())
 for i in range(M):
-    n = list(input().split())
-    board.append(n)
-
-Btmp = []
-Wtmp = []
-for m in range(N-8):
-    for l in range(M-8):
-        for k in range(0,2):
-            cnt=0
-            for i in range(0+m,8+m):
-                
-                for j in range(0+l,8+l):
-                    
-                    #흑색 시작
-                    if k ==0:
-                        chk = 'BW'
-                        line = ''.join(board[i][j])
-                        if line[j:j+2] == chk:
-                            cnt+=1
-
-                    #백색 시작
-                    else:
-                        chk = 'WB'
-                        line = ''.join(board[i][j])
-                        if line[j:j+2] == chk:
-                            cnt+=1
-            cnt_list.append(cnt)
+    N = list(input().split())
+    board.append(N)
+print(N)
