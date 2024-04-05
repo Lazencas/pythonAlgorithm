@@ -38,5 +38,9 @@ for i in range(N):
     lab.append(m)
 
 #벽 세개 세우는 모든 경우의 수
-
+cnt = 0
+for i in range(len(lab)):
+    for j in range(i,len(lab)):
+        for k in range(k,len(lab)):
+            
 
