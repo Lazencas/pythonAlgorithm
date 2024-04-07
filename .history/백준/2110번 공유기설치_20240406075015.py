@@ -14,9 +14,7 @@
 # 출력
 # 첫째 줄에 가장 인접한 두 공유기 사이의 최대 거리를 출력한다.
 '''
-왼쪽거리, 오른쪽거리 비교는 좋은데 언제 멈춰야하지?
-다 기록해서 뽑자, 뽑는 기준
-둘 값 비교해서 더 큰값이 뒤로가게 하는 튜플 만들고 리버스정렬해서 0번인덱스 뽑자
+
 '''
 import sys
 input = sys.stdin.readline
@@ -28,8 +26,6 @@ for i in range(N):
 house_list.sort()
 left = 0
 right = N-1
-i=0
-ans  = []
 while left<=right:
     mid = (left+right)//2
     #왼쪽거리 오른쪽거리
@@ -37,18 +33,13 @@ while left<=right:
     #왼쪽에서 mid인덱스거리, mid인덱스에서 오른쪽 거리
     left_len = house_list[mid]-house_list[left]
     right_len = house_list[right]-house_list[mid]
-    # print('left, right',left_len,'+',right_len)
-    if left_len>= right_len:
-        ans.append([right_len,left_len])
-    else:
-        ans.append([left_len,right_len])
 
-    if left_len <= right_len:
-        right = mid-1
-    else :
+    if left_len >= right_len:
         left = mid+1
-    i+=1
-    # print('몇번돌앗게',i)
+    else :
+        right = mid-1
+        
+ans  = []
+ans.append(right), ans.append(left)
+print(min(ans))
 
-ans.sort(reverse=True)
-print(ans[0][0])

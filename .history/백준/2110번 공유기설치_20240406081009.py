@@ -37,7 +37,7 @@ while left<=right:
     #왼쪽에서 mid인덱스거리, mid인덱스에서 오른쪽 거리
     left_len = house_list[mid]-house_list[left]
     right_len = house_list[right]-house_list[mid]
-    # print('left, right',left_len,'+',right_len)
+    print('left, right',left_len,'+',right_len)
     if left_len>= right_len:
         ans.append([right_len,left_len])
     else:
@@ -48,7 +48,7 @@ while left<=right:
     else :
         left = mid+1
     i+=1
-    # print('몇번돌앗게',i)
+    print('몇번돌앗게',i)
 
 ans.sort(reverse=True)
 print(ans[0][0])
