@@ -52,7 +52,7 @@ ans = 0
 #반복문 짜고 1초~ 가장 오래걸리는 시간 left, right 잡기
 left , right = 1, (max(judges))*M
 while left <= right:
-    #근데 그 시간동안 몇명 검사했는지 어떻게 알지?
+    #근데 그 시간동안 몇명 검사했는지 어떻게 알지? > 돌아가면서 다 나눈 몫을 다 합치면 됨
     mid = (left+right)//2
     people = 0
     for judge in judges:
