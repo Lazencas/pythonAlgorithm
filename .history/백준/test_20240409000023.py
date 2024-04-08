@@ -73,8 +73,9 @@ visited = [False] * (n+1)
 # print(graph)
 bfs(1)
 '''
-a = []
-a.append([3,4])
+a = {}
 
-b,c=a.pop()
-print(b,c)
+for i in range(3):
+    for j in range(3):
+        a[i,j]=0
+print(a)

@@ -73,8 +73,41 @@ visited = [False] * (n+1)
 # print(graph)
 bfs(1)
 '''
-a = []
-a.append([3,4])
+import sys
 
-b,c=a.pop()
-print(b,c)
+sys.setrecursionlimit(10**9)
+
+def dfs(idx):
+    
+    global count
+    if visited[idx]:
+        return
+
+    visited[idx] = count
+
+    # print('graph:',graph)
+    # print('visitied:',visited)
+    # print('count:',count)
+    
+    for i in graph[idx]:
+        
+        if visited[i] == 0:  
+            count += 1
+            dfs(i)    
+
+input = sys.stdin.readline
+n, m, r = map(int, input().split())
+graph = [[]for _ in range(n+1)]
+visited = [0]* (n+1)
+count =1
+
+for i in range(m):
+    node, output = map(int,input().split())
+    graph[node].append(output)
+    graph[output].append(node)
+    graph[node].sort()   ## ---> sort
+    
+dfs(r)
+
+for i in range(1, n+1):
+    print(visited[i])

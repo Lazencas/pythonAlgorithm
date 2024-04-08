@@ -75,6 +75,4 @@ bfs(1)
 '''
 a = []
 a.append([3,4])
-
-b,c=a.pop()
-print(b,c)
+print(a)

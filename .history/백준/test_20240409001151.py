@@ -74,7 +74,5 @@ visited = [False] * (n+1)
 bfs(1)
 '''
 a = []
-a.append([3,4])
-
-b,c=a.pop()
-print(b,c)
+a.append(3,4)
+print(a)
