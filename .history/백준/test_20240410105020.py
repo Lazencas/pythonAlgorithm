@@ -82,11 +82,11 @@ bfs(1)
 # a=round(a,0)
 # print(a)
 
-'''
+
 def combo(n,m):
-
+    '''
     0~n-1 중에서 m개를 선택하는 조합을 구하는 함수
-
+    '''
     def dfs(idx, stack):
         if len(stack)==m:
             result.append(stack[:])
@@ -96,32 +96,19 @@ def combo(n,m):
                 visited[i]=True
                 stack.append(i)
                 dfs(i, stack)
-                stack.pop()
-                visited[i]=False
+                # stack.pop()
+                # visited[i]=False
+
+
 
     visited = [False]*n
     result = []
     dfs(0,[])
     return result
 
+
+
+
 cs = combo(5,3)
 for c in cs:
     print(c)
-'''
-import copy
-
-# 원본 리스트
-original_list = [[1, 2], [3, 4]]
-
-# 얕은 복사
-deep_copied_list = copy.deepcopy(original_list) 
-
-# 깊은 복사된 리스트와 원본 리스트가 같은 객체를 참조하는지 확인
-print(deep_copied_list is original_list)  # 출력: False
-print(deep_copied_list[0] is original_list[0])  # 출력: False
-
-# 깊은 복사된 리스트를 변경
-deep_copied_list[0][0] = 5
-
-# 원본 리스트 확인
-print(original_list)  # 출력: [[1, 2], [3, 4]]

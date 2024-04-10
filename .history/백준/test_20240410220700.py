@@ -114,14 +114,14 @@ import copy
 original_list = [[1, 2], [3, 4]]
 
 # 얕은 복사
-deep_copied_list = copy.deepcopy(original_list) 
+shallow_copied_list = copy.deepcopy(original_list) 
 
-# 깊은 복사된 리스트와 원본 리스트가 같은 객체를 참조하는지 확인
-print(deep_copied_list is original_list)  # 출력: False
-print(deep_copied_list[0] is original_list[0])  # 출력: False
+# 얕은 복사된 리스트와 원본 리스트가 같은 객체를 참조하는지 확인
+print(shallow_copied_list is original_list)  # 출력: False
+print(shallow_copied_list[0] is original_list[0])  # 출력: True
 
-# 깊은 복사된 리스트를 변경
-deep_copied_list[0][0] = 5
+# 얕은 복사된 리스트를 변경
+shallow_copied_list[0][0] = 5
 
 # 원본 리스트 확인
-print(original_list)  # 출력: [[1, 2], [3, 4]]
+print(original_list)  # 출력: [[5, 2], [3, 4]]

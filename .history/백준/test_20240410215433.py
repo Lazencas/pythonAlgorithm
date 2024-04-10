@@ -110,18 +110,10 @@ for c in cs:
 '''
 import copy
 
-# 원본 리스트
-original_list = [[1, 2], [3, 4]]
+a = [1,2,3,4]
+b = copy.copy(a)
 
-# 얕은 복사
-deep_copied_list = copy.deepcopy(original_list) 
+b.clear
 
-# 깊은 복사된 리스트와 원본 리스트가 같은 객체를 참조하는지 확인
-print(deep_copied_list is original_list)  # 출력: False
-print(deep_copied_list[0] is original_list[0])  # 출력: False
-
-# 깊은 복사된 리스트를 변경
-deep_copied_list[0][0] = 5
-
-# 원본 리스트 확인
-print(original_list)  # 출력: [[1, 2], [3, 4]]
+print(a)
+print(b)
