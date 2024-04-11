@@ -49,7 +49,7 @@ def cycle():
     for i in range(up):
         house[i][-1] = house[i+1][-1]
     # ←
-    for i in range(C-1, 0, -1):
+    for i in range(C-1, up, -1):
         house[up][i] = house[up][i-1]
 
     #공기청정기 down부분에서 나타나는 시계방향 순환(채우는건 반대로)
@@ -72,8 +72,8 @@ def cycle():
 
 def result(house):
     total = 0
-    for i in range(R):
-        for j in range(C):
+    for i in range(len(house)):
+        for j in range(len(house)):
             total += house[i][j]
     return total + 2
 
@@ -91,6 +91,5 @@ for i in range(R):
 for i in range(T):
     house = spread()
     cycle()
-#house에 있는 미세먼지 다 더해서 반환
 print(result(house))
 

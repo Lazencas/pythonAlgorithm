@@ -9,8 +9,6 @@
 '''
 import sys
 input = sys.stdin.readline
-dx=[1,-1,0,0]
-dy=[0,0,1,-1]
 #미세먼지가 확산되는 함수
 #순차 탐색 하면서 숫자만나면 < 이거 문제생김
 #해당 숫자의 전후좌우를 확인함
@@ -22,7 +20,8 @@ def spread():
     copy_house = [[0]*C for _ in range(R)]
     copy_house[up][0]= -1
     copy_house[down][0]= -1
-    
+    dx=[1,-1,0,0]
+    dy=[0,0,1,-1]
     for i in range(R):
         for j in range(C):
             if house[i][j] > 0:
@@ -49,7 +48,7 @@ def cycle():
     for i in range(up):
         house[i][-1] = house[i+1][-1]
     # ←
-    for i in range(C-1, 0, -1):
+    for i in range(C-1, up, -1):
         house[up][i] = house[up][i-1]
 
     #공기청정기 down부분에서 나타나는 시계방향 순환(채우는건 반대로)
@@ -72,8 +71,8 @@ def cycle():
 
 def result(house):
     total = 0
-    for i in range(R):
-        for j in range(C):
+    for i in range(len(house)):
+        for j in range(len(house)):
             total += house[i][j]
     return total + 2
 
@@ -91,6 +90,5 @@ for i in range(R):
 for i in range(T):
     house = spread()
     cycle()
-#house에 있는 미세먼지 다 더해서 반환
 print(result(house))
 
