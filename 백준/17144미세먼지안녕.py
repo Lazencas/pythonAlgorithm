@@ -5,7 +5,6 @@
 1.미세먼지가 확산되는 함수 (시간T,R*C집리스트) 반환값 > 확산된 결과의 house
 2.공기청정기가 작동하는 함수 (시간T,R*C집리스트)
 3.미세먼지의 양을 구하는 함수 (R*C집리스트)
-
 '''
 import sys
 input = sys.stdin.readline
