@@ -34,31 +34,3 @@ for _ in range(L):
     time = int(time)
     act.append([time,direct])
 
-dx = [0,1,0,-1]
-dy = [1,0,-1,0]
-nd, hx, hy = 0, 0, 0
-time , i = 0,0
-queue = deque()
-queue.append((hx,hy))
-while True:
-    hx = hx + dx[nd]
-    hy = hy + dy[nd]
-    time+=1
-    #종료조건
-    if hx<0 or hx>=N or hy < 0 or hy>=N or (hx,hy) in queue:
-        break
-    queue.append((hx, hy))
-    if board[hx][hy]==0:
-        queue.popleft()
-    else:
-        board[hx][hy]=0
-
-    if time == act[i][0]:
-        if act[i][1]=='L':
-            nd = (nd-1) %4
-        else:
-            nd = (nd+1) %4
-        if i+1 < len(act):
-            i+=1
-
-print(time)
