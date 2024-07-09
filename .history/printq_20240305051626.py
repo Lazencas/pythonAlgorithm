@@ -25,3 +25,40 @@
 
 # 출력
 # 각 테스트 케이스에 대해 문서가 몇 번째로 인쇄되는지 출력한다.
+
+testcase = int(input())
+answer_file_order = 0
+anlist = []
+repeat = True
+
+#입력된 테스트 케이스 수 만큼 반복
+for i in range(testcase):
+    file_ea, answer_file_location = map(int,input().split(' '))
+    print_q = list(map(int,input().split(' ')))
+    #프린트큐 전체에서 가장 큰 수를 찾는다
+    #프린트큐를 전체 순회하면서 가장 큰수보다 작은 수가 있으면 [0]번째 에서 빼서 [-1]번째에 넣어준다
+    #이렇게해서 내림차순이 완료 될때까지 반복한다.
+    #자리 옮겨지는데 목적으로 하는 문서가 어디로 옮겨졋는지 자리를 어떻게 찾지?
+    #똑같은 크기의 0으로 채워진 리스트를 만들고 목표 문서의 위치 인덱스에 1을 주고 프린트큐랑 동기화
+    #찾을때는 리스트에서 값이1인 거 찾고 그 인덱스 반환하면 그게 답
+    #가장큰수와 가장 작은수를 일단 찾을 수 있다. max(print_queue), min(print_queue)
+    #answer_file의 어떤 정보를 기억해야할거같은데, answer_file의 값-1 만큼의 위치의 print_queue가 우선순위고
+    #이거 answer_file_priority 라고.... 언제까지 정렬을 반복할지랑..... 어떻게 정렬할지...... 이거 두개만 해결하면 된다
+    #정렬확인로직, 정렬로직
+    #10분고민....
+    #이걸로 정답파일의 위치를 추적
+    anlist = [0 for i in range(file_ea)]
+    anlist[answer_file_location] = 1
+    maxnum = max(print_q)
+    temp_q = [i for i in print_q]
+
+
+
+    #우선순위 따라 정렬하는 로직
+    for idx in range(file_ea-1):
+        if temp_q[idx] < maxnum:
+            anlist.append(anlist.pop(0))
+        
+    while repeat:
+
+#.... 고민해봐도 모르겠는데
