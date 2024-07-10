@@ -41,23 +41,7 @@
 그냥 큰거 계속 뽑는 식이니 힙이다.
 
 가장 키가 큰 거인을 찾아서 반으로 줄이고, 그 다음 큰 거인 찾아서 반으로 줄이고
-T번 반복하고, 가장 큰 거인을 마지막으로 출력
+T번 반복하고, 혹은 최소로 사용 한 횟수 or다 못하면 가장 큰 거인을 마지막으로 출력
 
 
 '''
-from heapq import *
-import sys
-input = sys.stdin.readline
-N, Hc, T = map(int,input().split())
-giants = []
-heapify(giants)
-for i in range(N):
-    h = int(input())
-    heappush(giants,-h)
-
-for i in range(T):
-    g = -(heappop(giants))//2
-    heappush(giants,-g)
-print(-(min(giants)))
-
-

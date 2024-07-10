@@ -45,34 +45,3 @@ T번 반복하고, 혹은 최소로 사용 한 횟수 or다 못하면 가장 큰
 
 
 '''
-from heapq import *
-import sys
-input = sys.stdin.readline
-N, Hc, T = map(int,input().split())
-giants = []
-heapify(giants)
-for i in range(N):
-    h = int(input())
-    heappush(giants,-h)
-cnt = 0
-#1.뿅망치를 전부 사용했는지 체크
-#2.혹은 거인이 전부 자기보다 작아졌는 지
-#3.둘 다 만족하면 0출력
-for i in range(T):
-    #뿅망치 횟수 다썻을때
-    if cnt>=T:
-        #추가로 제일 큰 거인이 센티보다 잘을지 확인
-
-    #제일 큰 거인이 센티보다 작을 때
-    elif -(giants[0]) < Hc:
-
-    
-    # 
-    else:
-        g = -(heappop(giants))//2
-        heappush(giants,-g)
-
-
-print(-(min(giants)))
-
-
