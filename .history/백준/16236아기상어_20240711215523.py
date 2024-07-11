@@ -20,35 +20,3 @@
 가장 처음 아기상어 크기 2
 
 '''
-
-import sys
-input = sys.stdin.readline
-def feed_check(l):
-    #먹을 수 있는 물고기가 있는지 체크
-    locate=[]
-    for i in range(n):
-        for j in range(n):
-            if l[i][j] < shark:
-                locate.append([i,j])
-    return locate
-
-def short_feed(locate, l):
-    short = l[locate[0][1]][locate[0][2]]
-    if locate <=1:
-        return locate[0]
-    for i in range(n):
-        for j in range(n):
-            
-
-n = int(input())
-board = []
-shark = 2
-ans= 0
-for i in range(n):
-    a = list(map(int,input().split()))
-    board.append(a)
-
-while True:
-    if  1 > len(feed_check(board)):
-        print(ans)
-        break
