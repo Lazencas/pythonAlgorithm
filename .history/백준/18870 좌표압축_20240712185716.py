@@ -8,12 +8,3 @@
 그래서 중복을 제거하고 정렬한 새로운 리스트를 만들고
 새로만든 리스트의 인덱스 번호를
 '''
-import sys
-input = sys.stdin.readline
-n = int(input())
-x = list(map(int,input().split()))
-x2 = sorted(list(set(x)))
-dic = {x2[i] : i for i in range(len(x2))}
-print(dic)
-for i in x:
-    print(dic[i],end=' ')
