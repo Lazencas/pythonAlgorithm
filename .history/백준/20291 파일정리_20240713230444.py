@@ -13,18 +13,3 @@
 
 # 출력
 # 확장자의 이름과 그 확장자 파일의 개수를 한 줄에 하나씩 출력한다. 확장자가 여러 개 있는 경우 확장자 이름의 사전순으로 출력한다.
-
-N = int(input())
-ext = {}
-for i in range(N):
-    name, ex = input().split('.')
-    if ex not in ext:
-        ext.setdefault(ex,1)
-    else:
-        ext[ex] += 1
-answer = []
-for i,k in ext.keys():
-    answer.append([i,k])
-
-for i in answer:
-    print(i)
