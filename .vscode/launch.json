@@ -5,12 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "pythonAlgorithm_d4fe5a1e"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["<", "input.txt"],
+            "args": [
+                "<",
+                "input.txt"
+            ],
             "justMyCode": true
         }
     ]
