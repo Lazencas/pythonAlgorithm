@@ -8,6 +8,7 @@
 # 3	"Odd"
 # 4	"Even"
 #
+#
 
 
 def solution(num):
